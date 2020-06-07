@@ -14,7 +14,7 @@ IF Selection.String == English:
     to Japanese
 ```
 
-Supported Delete Preview Window by Button!
+Supported Preview Window Delete by Button!
 
 ## About 💁‍♂️
 
@@ -28,10 +28,14 @@ That is **Google Apps Script**!
 
 ## Please 🙇‍♂️
 
-Insert **Endpoint** and **OAuth Token** for Google Apps Script.
+Insert **Web Hook URL** and **OAuth Token** for Google Apps Script.
 
 ![config_window.png](config_window.png)
 
 ### How to Get OAuth Token 🤔
 
 Run **get_oauth_token()** Function.
+
+## Entry 🥳
+
+- [Qiita](https://qiita.com/huuya/items/1d23e77c91506b8c3462)
