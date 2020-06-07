@@ -28,15 +28,9 @@ That is **Google Apps Script**!
 
 ## Please 🙇‍♂️
 
-Edit ```./Chrome_Extension/background/script.js```.
+Insert **Endpoint** and **OAuth Token** for Google Apps Script.
 
-### Line 2
-
-That is **Endpoint** for Google Apps Script!
-
-### Line 3
-
-That is **OAuth Token** for Google Apps Script!
+![config_window.png](config_window.png)
 
 ### How to Get OAuth Token 🤔
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+  <title>SSTGT</title>
+  <link rel="stylesheet" href="assets/lib/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/lib/css/fontawesome/all.min.css">
+  <link rel="stylesheet" href="assets/lib/css/stisla/style.min.css">
+  <link rel="stylesheet" href="assets/lib/css/stisla/components.min.css">
+  <link rel="stylesheet" href="assets/app/css/app.css">
+</head>
+<body>
+
+  <!-- HTML-Parts -->
+  <app-html>
+
+    <!-- Card -->
+    <div class="card card-primary">
+
+      <!-- Card-Header -->
+      <div class="card-header">
+
+        <!-- Card-Title -->
+        <h4>
+          Google Apps Script 設定
+          <span class="d-none">
+            <i class="fas fa-check"></i>
+          </span>
+        </h4><!-- /Card-Title -->
+
+      </div><!-- /Card-Header -->
+
+      <!-- Card-Body -->
+      <div class="card-body">
+
+        <!-- Form-Group -->
+        <div class="form-group">
+
+          <!-- Label -->
+          <label for="endpoint">
+            WebHook URL
+          </label><!-- /Label -->
+
+          <!-- Input-Endpoint -->
+          <input
+            id="endpoint"
+            class="form-control"
+            type="text"
+            tabindex="1"
+            placeholder="WebHookのURLを入力してください"
+            autofocus
+          ><!-- /Input-Endpoint -->
+
+        </div><!-- /Form-Group -->
+
+        <!-- Form-Group -->
+        <div class="form-group">
+
+          <!-- Label-Box -->
+          <div class="d-block">
+
+            <!-- Label -->
+            <label for="token" class="control-label">
+              アクセストークン
+            </label><!-- /Label -->
+
+          </div><!-- /Label-Box -->
+
+          <!-- Input-Token -->
+          <input
+            id="token"
+            class="form-control"
+            type="text"
+            tabindex="2"
+            placeholder="アクセストークンを入力してください"
+          ><!-- /Input-Token -->
+
+        </div><!-- /Form-Group -->
+
+        <!-- Form-Group -->
+        <div class="form-group">
+
+          <!-- Button -->
+          <button
+            id="save"
+            class="btn btn-primary btn-lg btn-block"
+            type="button"
+            tabindex="3"
+          >
+            保存
+          </button><!-- /Button -->
+
+        </div><!-- /Form-Group -->
+
+      </div><!-- /Card-Body -->
+
+    </div><!-- /Card -->
+
+  </app-html><!-- /HTML-Parts -->
+
+  <!-- JS-Parts -->
+  <app-js>
+    <script src="assets/lib/js/jquery/jquery.min.js"></script>
+    <script src="assets/lib/js/popper/popper.min.js"></script>
+    <script src="assets/lib/js/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/lib/js/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="assets/lib/js/stisla/stisla.js"></script>
+    <script src="assets/lib/js/stisla/scripts.js"></script>
+    <script src="assets/app/js/app.js"></script>
+  </app-js><!-- /JS-Parts -->
+
+</body>
+</html>
