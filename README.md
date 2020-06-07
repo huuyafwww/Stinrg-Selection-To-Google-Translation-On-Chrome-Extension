@@ -14,6 +14,8 @@ IF Selection.String == English:
     to Japanese
 ```
 
+Supported Delete Preview Window by Button!
+
 ## About 💁‍♂️
 
 ### "Chrome_Extension" Directory
