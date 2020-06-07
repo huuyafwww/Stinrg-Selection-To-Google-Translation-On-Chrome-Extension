@@ -1,7 +1,3 @@
-// https://script.google.com/macros/s/~/exec";
-var endpoint = "GASのエンドポイント";
-var authToken = "アクセストークン";
-
 /**
  * Get Translation URL
  *
@@ -13,12 +9,10 @@ function __get_translation_url(
 {
 	let is_ja_str = __is_ja_str(target_str);
 	let to = is_ja_str ? "en" : "ja";
-	let url = (
-		endpoint
-		+ "?text=" + target_str
+	return (
+		"?text=" + target_str
 		+ "&to=" + to
     );
-    return url;
 }
 
 /**
@@ -36,16 +30,20 @@ function __is_ja_str(
 /**
  * Get Translated String
  *
- * @param {string} request_url
+ * @param {string} param
  * @param {*} sender
+ * @param {string} endpoint
+ * @param {string} authToken
  */
 async function __get_translated_str(
-    request_url,
-    sender
+    param,
+    sender,
+    endpoint,
+    authToken
 )
 {
     await $.ajax({
-        url:request_url,
+        url:endpoint + param,
         type:"GET",
         headers: {
             "Authorization": "Bearer " + authToken,
@@ -65,15 +63,48 @@ async function __get_translated_str(
     });
 }
 
+/**
+ * Get Config
+ *
+ * @param {string} request_url
+ * @param {*} sender
+ */
+function __get_config(
+    param,
+    sender
+){
+    chrome.storage.sync.get(
+        [
+            "sstgt-endpoint",
+            "sstgt-token"
+        ],
+        function(
+            result
+        )
+        {
+
+            // Get Translated String
+            __get_translated_str(
+                param,
+                sender,
+                result["sstgt-endpoint"],
+                result["sstgt-token"]
+            );
+        }
+    );
+}
+
 
 chrome.runtime.onMessage.addListener(
-    function(
+    async function(
         req,
         sender,
         sendResponse
     )
     {
-        __get_translated_str(
+        // Get Config
+        __get_config(
+            // Get Translation URL
             __get_translation_url(
                 req.body
             ),
