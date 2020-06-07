@@ -4,13 +4,19 @@ var __X;
 var __Y;
 
 $(function(){
-	__on_hover_str();
+
+	// On Hover String
+	__on_selection_str();
+
+	// When Click "X" Button,Delete Preview.
+	__click_delete_btn();
+
 });
 
 /**
  * On Hover String
  */
-function __on_hover_str()
+function __on_selection_str()
 {
 	$("body").on(
 		"mouseup",
@@ -78,6 +84,7 @@ function __set_translated_str(
 		'<div class="d3SzntVG_par" style="top:'+position["y"]+'px;left:'+position["x"]+'px;">'
 			+'<div class="d3SzntVG">'
 				+ translated_str
+				+'<button class="d3SzntVG_delete">X</button>'
 			+'</div>'
 		+'</div>'
 	);
@@ -157,4 +164,18 @@ function getSelectionDimensions(){
 		width:width,
 		height:height
 	};
+}
+
+/**
+ * When Click "X" Button,Delete Preview.
+ */
+function __click_delete_btn()
+{
+	$(document).on(
+		"click",
+		"button.d3SzntVG_delete",
+		function(){
+			$(this).parent().parent().remove();
+		}
+	);
 }
