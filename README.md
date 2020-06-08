@@ -42,3 +42,8 @@ Run **get_oauth_token()** Function.
 ## Entry 🥳
 
 - [Qiita](https://qiita.com/huuya/items/1d23e77c91506b8c3462)
+
+## Used By 🙋‍♂️
+
+- [Imgbot](https://github.com/marketplace/imgbot)
+    - [Example Pull Request](https://github.com/huuyafwww/Stinrg-Selection-To-Google-Translation-On-Chrome-Extension/pull/1)
