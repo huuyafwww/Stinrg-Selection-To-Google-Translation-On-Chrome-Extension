@@ -47,3 +47,5 @@ Run **get_oauth_token()** Function.
 
 - [Imgbot](https://github.com/marketplace/imgbot)
     - [Example Pull Request](https://github.com/huuyafwww/Stinrg-Selection-To-Google-Translation-On-Chrome-Extension/pull/1)
+
+Thank you.
