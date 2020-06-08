@@ -1,17 +1,30 @@
 div.d3SzntVG_par{
 	position: absolute;
+	cursor: pointer;
+	z-index: 999999999;
 }
 div.d3SzntVG{
 	min-width: 150px;
 	min-width: 60px;
 	position: relative;
 	padding: 0.6em;
-	background: -webkit-repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
-	background: repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
+	background-color: #fff;
+    border: 1px solid #1da1f2;
 	border-radius: 7px;
 }
 button.d3SzntVG_delete{
+	padding: 3px 12px;
 	position: absolute;
-	top:-15px;
-	right: -15px;
+	top:-18px;
+	right: -18px;
+	display: inline-block;
+    background-color: #fff;
+    border: 1px solid #1da1f2;
+    border-radius: 36px;
+    color: #1da1f2;
+    cursor: pointer;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+	line-height: 22px;
 }
