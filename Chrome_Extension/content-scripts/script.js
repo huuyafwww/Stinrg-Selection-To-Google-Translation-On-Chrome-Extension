@@ -1,7 +1,13 @@
-var selectedStr;
+var __selected_str,
+	__X,
+	__Y,
+	__click_x,
+	__click_y,
+	__position,
+	__selected_window_index
+;
 var __history = [];
-var __X;
-var __Y;
+var __is_moving = false;
 
 $(function(){
 
@@ -10,6 +16,9 @@ $(function(){
 
 	// When Click "X" Button,Delete Preview.
 	__click_delete_btn();
+
+	// On Window Init
+	__on_window_init()
 
 });
 
@@ -118,14 +127,14 @@ function __get_selected_str()
 {
 	if(window.getSelection)
 	{
-        selectedStr = window.getSelection().toString();
+        __selected_str = window.getSelection().toString();
 		if(
-			selectedStr !== ""
-			&&
-			selectedStr !== "\n"
+			["","\n"].indexOf(
+				__selected_str
+			) == -1
 		)
 		{
-            return selectedStr;
+            return __selected_str;
         }
     }
     return "";
@@ -176,6 +185,93 @@ function __click_delete_btn()
 		"button.d3SzntVG_delete",
 		function(){
 			$(this).parent().parent().remove();
+		}
+	);
+}
+
+
+/**
+ * On Window Init
+ */
+function __on_window_init()
+{
+	// On Mouse Down Window
+	__on_mouse_down_window();
+
+	// On Mouse Move Window
+	__on_mouse_move_window();
+
+	// On Mouse Up Window
+	__on_mouse_up_window();
+}
+
+/**
+ * On Mouse Down Window
+ */
+function __on_mouse_down_window()
+{
+	$(document).on(
+		"mousedown",
+		".d3SzntVG_par",
+		function(e){
+			if(__is_moving)return;
+			__is_moving = true; //移動中にする
+			__click_x = e.screenX;
+			__click_y = e.screenY;
+			__position = $(this).position();
+			__selected_window_index = $('.d3SzntVG_par').index(this);
+		}
+	);
+}
+
+/**
+ * On Mouse Move Window
+ */
+function __on_mouse_move_window()
+{
+	$(document).on(
+		"mousemove",
+		"body",
+		function(e){
+			if(!__is_moving)return;
+			$(".d3SzntVG_par")
+				.eq(__selected_window_index)
+				.css(
+					"left",
+					(
+						__position.left
+						+ e.screenX
+						- __click_x
+					)
+					+ "px"
+				)
+			;
+			$(".d3SzntVG_par")
+				.eq(__selected_window_index)
+				.css(
+					"top",
+					(
+						__position.top
+						+ e.screenY
+						- __click_y
+					)
+					+ "px"
+				)
+			;
+		}
+	);
+}
+
+/**
+ * On Mouse Up Window
+ */
+function __on_mouse_up_window()
+{
+	$(document).on(
+		"mouseup",
+		"body",
+		function(e){
+			__is_moving = false;
 		}
 	);
 }

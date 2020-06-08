@@ -14,7 +14,10 @@ IF Selection.String == English:
     to Japanese
 ```
 
-Supported Preview Window Delete by Button!
+**Supported**
+
+- Preview Window Delete by Button!
+- Drag & Drop Window
 
 ## About 💁‍♂️
 
