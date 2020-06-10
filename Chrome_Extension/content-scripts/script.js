@@ -31,7 +31,11 @@ function __on_selection_str()
 		"mouseup",
 		function(e){
 			let target_str = __get_selected_str();
-			if(target_str !== "")
+			if(
+				target_str !== ""
+				&&
+				e.altKey
+			)
 			{
 				__X = e.pageX
 				__Y = e.pageY

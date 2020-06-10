@@ -19,6 +19,10 @@ IF Selection.String == English:
 - Preview Window Delete by Button!
 - Drag & Drop Window
 
+### How to Action this Extension
+
+- Hold down the Alt key and finish selecting sentences
+
 ## About 💁‍♂️
 
 ### "Chrome_Extension" Directory
